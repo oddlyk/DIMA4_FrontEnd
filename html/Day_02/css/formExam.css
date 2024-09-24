@@ -1,0 +1,93 @@
+/* 글자에 빨간색 강조 */
+span.important {
+    color: red;
+}
+
+/* 설명문구 회색 지정 */
+p.info,
+span.info {
+    color: rgb(99, 99, 99);
+}
+
+div.header {
+    width: 900px;
+    margin: 0px auto;
+}
+
+/* 전체 테이블 특성 지정 */
+table {
+    /* 표 상하단에만 선 긋기 */
+    border-top: 2px solid #767676;
+    border-bottom: 1px solid #767676;
+    border-collapse: collapse;
+    width: 900px;
+    margin: 0px auto;
+    /* margin: 표 바깥쪽 여백 지정 
+                - auto를 통해 화면에 따라 좌우여백을 동일하게 줄수 있도록 함*/
+}
+
+table tr {
+    border-bottom: 1px solid #bbb;
+}
+
+/* 테이블의 제목 칸 특성 지정 */
+
+table th {
+    width: 150px;
+    background-color: #f5f5f5;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* 테이블의 내용 칸 특성 지정 */
+table td {
+    padding: 10px 20px;
+    /*        위 우 하 좌 
+                    위=하 우=좌 로 값 지정도 가능*/
+}
+
+/* input 상자 중, type이 text인 것 */
+input[type=text],
+input[type=password] {
+    width: 150px;
+    height: 25px;
+}
+
+select {
+    /*selet option과 동일*/
+    height: 30px;
+}
+
+/* 중복확인 버튼 */
+input#double_check {
+    background-color: rgb(73, 73, 73);
+    color: #fff;
+}
+
+/* 정보수신 동의 속 카카오톡 동의 설명 */
+fieldset {
+    border: 1px solid #eee;
+    background-color: #f5f5f5;
+}
+
+/* 최하단 submit, reset의 div칸 */
+div.button {
+    width: 900px;
+    margin: 0px auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* submit, reset 버튼에 공통적용되는 사항 */
+input.div_button {
+    width: 150px;
+    height: 50px;
+    background-color: #fff;
+    font-size: 15px;
+}
+
+/* submit버튼 */
+input#submit {
+    background-color: rgb(0, 0, 201);
+    color: #fff;
+}

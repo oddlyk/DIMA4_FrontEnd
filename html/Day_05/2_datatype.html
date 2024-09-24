@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 자료형</title>
+    <script>
+        console.log("출력!~ Hello, world!");
+        //한 줄 주석
+        /*
+            ## 자료형
+            1) 문자열 : '',"", `` (템플릿 문자열)
+            2) 숫자형 : 정수, 실수를 모두 포함한 숫자
+            3) 불린형 : true, false 처리 (0을 제외한 모든 숫자 = true)
+            4) 함수형 : function() {} 와 같은 형태
+            5) 객체형 : 객체형은 종류가 매우 많음
+                5-1) Object
+                5-2) JSON
+                5-3) Array (배열)
+                5-4) HTML 객체
+                5-5) null 객체 - 레퍼런스 변수가 아무 객체도 가르키지 않음을 나타냄
+            6) undefined
+                - 변수를 선언한 후에 초기화 하지 않으면 undefined로 초기화
+            7) Symbol : 데이터의 유일성 보장을 위해 사용
+        */
+        // 1) 문자열 자료형
+        let str = "대한민국";
+        console.log(str);
+        console.log(typeof str); //string
+
+        let mart = "우리동네 마트는 '아줌마마트' 입니다.";
+        console.log(mart);
+
+        let say = '아버지가 말씀하셨다. "자~ 용돈이다."';
+        console.log(say);
+
+        console.log("")
+        console.log("***백틱 사용 (템플릿 리터럴)***");
+        // 일반적인 문자 잇기
+        let age = 25;
+        console.log("당신의 나이는 " + age + "살이고, 10년 후에는 " + (age + 10) + "살이다.");
+
+        // 백틱 사용
+        console.log(`당신의 나이는 ${age}살이고, 10년 후에는 ${age + 10}살이다.`);
+        let temp = `Hello, world!`;
+        console.log(temp);
+        console.log("")
+        //-----------------------------------
+        // 일반적인 여러줄 출력
+        let story = "대한민국\n";
+        story += "Korea";
+        console.log(story);
+
+        //백틱으로 여러줄로 출력 시키기
+        let story2 = `대한민국
+Korea
+2024년 파리 올림픽`;
+        console.log(story2);
+        console.log("-------------------");
+
+        //==================================================
+        // 2) 숫자 자료형
+        let number = 12;
+        console.log(typeof number);
+        console.log(`나이는 ${number}`);
+        console.log(number / 5);
+        console.log("-------------------");
+
+        //=====================================================
+        // 3) 불린형
+        let bool = true;
+        console.log(typeof bool);
+        console.log(10 > 20);
+        if (1) console.log('1은 true와 같다.');
+
+        console.log("")
+        if ("값") console.log('값이 들어있는 문자열은 참'); //출력됨
+        if ([]) console.log('[]은 참 (주의)') //출력됨에 주의.
+        //falsy값: false의 역할을 하는 값 (null, 빈문자열(""),)
+        if (null) {
+            console.log('null은 참');
+        }
+        else {
+            console.log('null은 거짓'); //출력됨
+        }
+
+
+        if ("") console.log('값이 들어있지 않은 문자열은 거짓'); //출력되지 않음
+        console.log("-------------------");
+
+        //=====================================================
+        // 4) 함수 (function 함수명(변수){}) 반환타입을 주지않는 것이 특징.
+        //선언적 함수
+        function add(a, b) {
+            return a + b;
+        }
+        //함수 호출
+        let result = add(15, 20);
+        console.log(`함수 호출의 결과: ${result}`);
+
+        let sum = add; //함수를 변수에 대입 : 함수를 let에 넣어 새로운 이름으로 사용하게 할 수 있음
+        console.log(`함수 호출의 결과: ${sum(21, 11)}`);
+        console.log("")
+
+        //표현 함수 : 변수에 함수를 선언과 동시에 대입
+        let minus = function (a, b) {
+            return a - b;
+        };
+        console.log(`함수 minus 호출의 결과 : ${minus(21, 11)}`)
+        console.log("");
+        // let cnt = 0;
+        // setInterval(function () {
+        //     console.log('출력됨 => ' + cnt++);
+        // });
+
+        console.log("add 함수: " + typeof add);
+        console.log(typeof minus);
+
+        console.log("-------------------");
+
+        //=====================================================
+        // 5) 객체형 함수
+        //---Javscript Object---
+        console.log("**Javscript Object**");
+        let obj = { name: '홍길동', age: 25 }; //자바스크립트 오브젝트 = 파이썬의 딕셔너리 = 자바의 맵
+        console.log(typeof obj);
+        console.log('이름은 ' + obj['name']);
+        console.log('나이는 ' + obj.age);
+        console.log(obj);
+        console.log("");
+
+        let obj2 = {
+            name: '저팔계',
+            age: 30,
+            sayHello: function () {
+                console.log(this.name + ", " + this.age);
+            }
+        };
+        console.log(obj2);
+        console.log(obj2.sayHello());
+        console.log(typeof obj2);
+        console.log("")
+
+        // ---JSON obj와 유사하나, key값도 "" 내에 작성해야 함. 콘솔에서 출력 시 object 형태를가짐---
+        //비동기 통신 시 사용할 예정!
+        console.log("**JSON**")
+        let obj3 = { "name": '홍길동', "age": 25 };
+        console.log(typeof obj3); // object로 출력됨 
+        console.log('이름은 ' + obj3['name']);
+        console.log('나이는 ' + obj3.age);
+        console.log(obj3); // object 형태로 출력됨 
+        // alert(obj3); 경고창에서 띄우면 object object로 출력 
+        console.log("")
+
+        let obj4 = {
+            "name": '저팔계',
+            "age": 30,
+            "sayHello": function () {
+                console.log(this.name + ", " + this.age);
+            }
+        };
+        console.log(obj4);
+        console.log(obj4.sayHello());
+        console.log(typeof obj4);
+        console.log("");
+
+        //---Array---
+        console.log("**Array**");
+        let ary = [2, 4, 6, 8, 10];
+        console.log(typeof ary); // object 타입으로 보여짐
+        console.log(ary[0]);
+        console.log("");
+
+        //5-4) --HTML 객체--
+        console.log("**HTML**");
+        console.log("Body 태그 내에 작성됨")
+        // -- null 객체 - 레퍼런스 변수가 아무 객체도 가르키지 않음을 나타냄-- 
+        console.log("**null**");
+        let nullData = null;
+        console.log(typeof nullData); //object 타입으로 보여짐
+        console.log("");
+        console.log("-------------------");
+
+        // 6) undefined 객체
+        console.log("**undefined**");
+        let notInit;
+        console.log(notInit);
+        console.log(typeof notInit);
+
+        console.log("-------------------");
+
+        // 6) Symbol 객체 : 값의 유일성 보장
+        console.log("**Symbol**");
+        let mySymbol = Symbol();
+        console.log(mySymbol);
+        console.log(typeof mySymbol);
+
+
+        console.log("************************")
+        console.log("");
+        console.log("");
+    </script>
+</head>
+
+<body>
+    <h2 id="header">자바 스크립트 자료형</h2>
+    <p>처리 결과는 브라우저의 콘솔창에서 확인 가능!</p>
+    <script>
+        console.log("body에서 사용중");
+        // 요소 출력
+        // 요소의 id를 가지고 요소의 전체문 (<>를 포함한) 출력
+        let tag = document.getElementById("header");
+        console.log(tag); // alert(tag);가 있다면, h2 header의 모든 특징(글꼴 등)이 콘솔에 출력되고, 없다면 h2 header의 태그~내용 출력
+        console.log(typeof tag); // object라고 출력됨
+        //alert(tag); //[object HTMLHeadingElement] 라고 보임
+
+        //========HTML객체=====================================
+        // innerHTML: 시작태그와 끝 태그 사이에 HTML 삽입
+        tag.innerHTML = "바뀌었나?";
+        tag.innerHTML = "<span style='color:red'>바뀌었나?</span>";
+
+        // innerText: 시작태그와 끝 태그 사이의 값 변경
+        tag.innerText = "<span style='color:red'>바뀌었나?</span>";
+    </script>
+</body>
+
+</html>

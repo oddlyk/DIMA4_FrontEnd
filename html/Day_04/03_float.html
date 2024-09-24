@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(131, 164, 97);
+            border: 1px solid gray;
+        }
+
+        div.item {
+            float: left;
+            margin-left: 10px;
+            /* 
+                float: 요소 각각의 정렬방식
+                - left: 왼쪽부터 차곡차곡 (1-2-3)
+                - right: 오른쪽부터 차곡차곡 (3-2-1) 
+            */
+
+        }
+
+        /* div.one {
+            float: left;
+            margin-left: 10px;
+        } */
+        /* 요소 1개에만 float을 적용 시...
+        동생 요소들에게도 영향을 미치게 됨
+            two요소가 one 요소의 영향을 받아, one 요소 밑에 깔리게 됨
+            그 외의 3,4 요소도 한칸씩 앞으로 당겨지게 됨
+            그러나 content(글씨)는 밑으로 들어가지 않게 됨 (원래 two요소가 들어가야 할 위치에 존재)
+         */
+
+
+        div.three {
+            /* folat으로 주어진 것을 따르지 않도록 clear 
+                - left(왼쪽 float 제거), right(오른쪽 float 제거), both(모든 float 제거)
+                현재 div 태그이기 때문에 한줄 아래로 내려가게 됨*/
+            clear: both;
+            float: right;
+        }
+
+        p {
+            clear: left;
+            /* 위 요소들에 적용된 float에 따라가지 않도록 함.
+            만일 clear:left가 없다면, p태그는 div.item one 밑에 깔리게 됨 (단, 글자는 div.item two 옆에 존재하게 될 것) */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Float</h2>
+    <p>
+        float은 block 요소에 적용시켜 각 요소를 하나의 층으로 만들어 배치 <br>
+        어떤 요소를 float하게 되면 그 아래에 배치된 다른 요소들에도 영향을 줌
+    </p>
+    <div class="item one">하나</div>
+    <div class="item two">둘</div>
+    <div class="item three">셋</div>
+    <div class="item four">넷</div>
+    <div class="item five">다섯</div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam optio perspiciatis porro natus repudiandae
+        nemo, expedita quae, neque impedit excepturi animi perferendis error rerum deserunt. Totam enim nostrum dolor
+        veritatis.
+    </p>
+</body>
+
+</html>

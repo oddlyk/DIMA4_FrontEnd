@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position을 이용한 배치2</title>
+    <style>
+        div.parent {
+            /* dashed는 점선, solid는 실선 */
+            border: 1px dashed #aaa;
+            padding: 10px;
+            position: relative;
+        }
+
+        div.sibling {
+            background-color: skyblue;
+            padding: 5px;
+            text-align: center;
+        }
+
+        div.second {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+
+        /* position: static일때,...  top 등의 값을 줘도 적용되지 않음 */
+        div.static {
+            position: static;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* position: relative일 때,...  top 등의 값을 적용할 수 있음. 부모와 형제에게 영향을 미치지 않음 */
+        div.relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* position: absolute일 때,...  top 등의 값을 적용할 수 있음. 부모와 형제에게 영향을 미침 
+            부모요소의 relative, absolute에 영향을 받음. 영향을 줄 부모를 찾아가다가 없을경우 body의 영향을 받음*/
+        div.absolute {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* position: fixed일 때,...  top 등의 값을 적용할 수 있음. 화면이 기준이 됨. 
+        화면 한켠에 계속 고정해두는 용도로 주로 사용함*/
+        div.fixed {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="top">Position을 이용한 배치 2</h2>
+    <h3>static(default)</h3>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second static">Static</div>
+        <div class="sibling">Third</div>
+    </div>
+
+    <h3>Relative</h3>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second relative">Relative</div>
+        <div class="sibling">Third</div>
+    </div>
+
+    <h3>Absolute</h3>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second absolute">Absolute</div>
+        <div class="sibling">Third</div>
+    </div>
+
+    <h3>Fixed</h3>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second fixed">
+            <!-- 현재 문서 내에서 id가 top인 요소로 이동-->
+            <a href="#top">Fixed</a>
+        </div>
+        <div class="sibling">Third</div>
+    </div>
+</body>
+
+</html>

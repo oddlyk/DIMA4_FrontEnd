@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표연습</title>
+
+
+    <!--스타일 지정 : **각 태그의 요소로 작성하는 것보다 우선**됨-->
+    <style>
+        /*표 스타일 지정*/
+        table {
+            /*표의 테두리 지정 : [테두리 두께] [글자형식] [색(16진수) or rgb(r,g,b)]; */
+            border: 2px solid rgb(56, 124, 192);
+
+            /*셀과 셀사이의 여백 처리 : collapse(여백제거)*/
+            border-collapse: collapse;
+        }
+
+        /*표 머릿글 요소(thead) 스타일 지정*/
+        table thead {
+            /*표의 thead부분의 배경색*/
+            background-color: #eee;
+        }
+
+        /*테이블 내의 th 요소, 테이블 내의 td 요소의 스타일 지정*/
+        table th,
+        table td {
+            /*두 요소를 한번에 지정할 때 앞과 같이 사용*/
+            /*테두리 스타일*/
+            border: 1px solid #eee;
+
+            /*각 셀 내의 여백 - 값과 셀의 테두리 사이의 간격*/
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>표를 만드는 태그</h2>
+    <ul>
+        <li>행(row): 가로</li>
+        <li>열(column): 세로</li>
+        <li>셀(cell): 행과 열이 만나 생성되는 부분</li>
+    </ul>
+
+    <!--표생성-->
+    <!--기본적으로 셀과 셀 사이에 여백이 발생-->
+    <!--thead와 tbody를 따로 지정하지 않으면 모든 내용이 tbody 내로 들어가게 됨-->
+    <table border="1"> <!--border="1": 테두리 두께-->
+        <!--가로(행) 생성: tr-->
+        <thead>
+            <tr><!--1행(제목)-->
+                <!--열의 제목인 첫번째 행: th를 통해 제목지정-->
+                <th>제목1</th> <!--1행1열-->
+                <th>제목2</th> <!--1행2열-->
+                <th>제목3</th> <!--1행3열-->
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr><!--2행-->
+                <!--각 내용:td를 통해 각 칸마다 값을 넣음-->
+                <td>내용11</td> <!--2행1열-->
+                <td>내용12</td> <!--2행2열-->
+                <td>내용13</td> <!--2행3열-->
+            </tr>
+            <tr><!--3행-->
+                <!--각 내용:td를 통해 각 칸마다 값을 넣음-->
+                <td>내용21</td> <!--3행1열-->
+                <td>내용22</td> <!--3행2열-->
+                <td>내용23</td> <!--3행3열-->
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

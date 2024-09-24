@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pre 요소</title>
+</head>
+
+<body>
+    <h2>pre 요소</h2>
+    <p>
+        일반적인 요소들은 탭, 스페이스, 엔터가 아무리 요소 내에 많아도 하나로 처리한다. <br>
+        프로그램등의 코드를 화면에 나타내야 할 때에는 pre 태그가 효과적이다.
+    </p>
+    <br>
+    <h3>pre가 없는 코드 (p코드 사용) </h3> <!--적용한 엔터, 탭이 제거됨-->
+    <p>
+        <strong>강제 띄어쓰기 기능을 활용한 들여쓰기 (추천하지 않음)</strong><br>
+        public class Test {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, world!");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </p>
+    <br>
+    <h3>pre가 적용된 코드</h3> <!--엔터, 탭이 적용되어서 화면에 출력됨-->
+    <pre>
+        public class Test {
+            public static void main(String[] args){
+                System.out.println("Hello, world!");
+        }
+        }
+    </pre>
+
+    <h4>특수문자를 Characer Entitiy로 입력하기</h4>
+    <a href="https://www.w3schools.com/html/html_entities.asp ">Characer Entitiy 링크</a>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록관련 태그</title>
+</head>
+
+<body>
+    <h2>목록과 관련된 태그</h2>
+    <p>
+        &nbsp;&nbsp;- nbsp 없이 자동 들여쓰기가 됨<br>
+        ul: 순서가 없는 리스트<br>
+        &nbsp;&nbsp;- li태그를 통해 목록에 대한 항목 기술(●)<br>
+        &nbsp;&nbsp;- type= <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- "square": 사각형 ...
+        <!--https://www.w3schools.com/를 통해 다른 모양들 확인 가능>html>reference>ul>style lists-->
+        ol: 순서가 있는 리스트<br>
+        &nbsp;&nbsp;- li태그를 통해 목록에 대한 항목 기술(숫자)<br>
+        &nbsp;&nbsp;- ol내의 type 속성을 통해 항목 모양 변경 가능 (default:숫자(1))<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;- "1":숫자, "a":영문 소문자, "A": 영문 대문자, "i": 로마숫자 소문자, "I": 로마숫자 대문자
+        &nbsp;&nbsp;- ol내의 start 속성을 통해 항목의 시작 값 변경 가능 (default:1)<br>
+        &nbsp;&nbsp;- ol내의 reverse 속성을 통해 항목 역순 출력 가능
+        dl: 정의에 관련됨<br>
+        &nbsp;&nbsp;- dt태그(제목)과 dd태그(설명)를 통해 정의 기술<br>
+        &nbsp;&nbsp;- 숫자나 문자없는 항목 생성
+    </p>
+    <hr>
+    <h2>실습</h2>
+    <h3>ul>li</h3>
+    <ul type="square">
+        <!-- li*4 자동완성을 통해 li 태그 4개를 한번에 생성 가능-->
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+        <li>항목4</li>
+    </ul>
+    <h3>ol>li</h3>
+    <ol>
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+        <li>항목4</li>
+    </ol>
+    <h3>목록 중첩</h3>
+    <ul>
+        <li>항목1
+            <ul> <!--ul>li3*3 자동완성을 통해 ul태그와 li태그 3개를 한번에 생성 가능-->
+                <li>항목2</li>
+                <li>항목3</li>
+                <li>항목4</li>
+            </ul>
+        </li>
+        <li>항목2</li>
+        <li>항목3</li>
+        <li>항목4</li>
+    </ul>
+    <h3>사용자 정의 목록 (dl,dt,dd)</h3>
+    <dl>
+        <dt><b>제목</b></dt>
+        <dd>설명1</dd>
+        <dd>설명2</dd>
+    </dl>
+</body>
+
+</html>

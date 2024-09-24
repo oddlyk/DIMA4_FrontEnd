@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Exam</title>
+    <!-- style 내용들을 외부 파일에 저장(.css) 후, link를 통해 파일 지정 -->
+    <link rel="stylesheet" href="./css/formExam.css">
+</head>
+
+<body>
+    <div class="header">
+        <!-- 제목 -->
+        <h2>회원가입_회원정보 입력</h2>
+        <div>
+            홈 &gt; 회원 &gt; 회원가입
+        </div>
+
+
+        <!-- 입력전 설명 -->
+        <div>
+            <b style="color:rgb(23, 23, 160)">회원정보입력</b>
+        </div>
+        <span>
+            <span class="important">*</span> 표시된 항목은 <span class="important">필수입력</span> 항목입니다.
+        </span>
+    </div>
+
+    <!-- form -->
+    <form action="" method="post">
+        <table>
+            <!-- 이름 -->
+            <tr>
+                <th>이름</th>
+                <td>김묘경</td>
+            </tr>
+
+            <!-- 아이디 -->
+            <tr>
+                <th><span class="important">*</span>아이디</th>
+                <td>
+
+                    <head>
+                        <input type="text" name="id" minlength="5" maxlength="12" requiimportant>
+                        <input type="button" value="중복확인" id="double_check"> <br>
+                        <span class="info">영문소문자, 숫자 5~12자</span>
+                    </head>
+                </td>
+            </tr>
+
+            <!-- 비밀번호 -->
+            <tr>
+                <th><span class="important">*</span>비밀번호</th>
+                <td>
+
+                    <head>
+                        <input type="password" name="password" id="password" minlength="10" maxlength="15"
+                            requiimportant>
+                        <br>
+                        <span class="info">
+                            영문, 숫자, 특수문자 중 2가지 이상 혼합하여 10~15자로 입력하세요. <br>
+                            &#8251; 특수문자는 "~!@#*()_|.만 사용가능합니다.
+                        </span>
+                    </head>
+                </td>
+            </tr>
+
+            <!-- 비밀번호 확인 -->
+            <tr>
+                <th>
+                    <span class="important">*</span>비밀번호확인
+                </th>
+                <td>
+                    <input type="password" name="password_check" id="password_check" minlength="10" maxlength="15"
+                        requiimportant>
+                </td>
+            </tr>
+
+            <!-- 연락처 -->
+            <tr>
+                <th>
+                    <span class="important">*</span>연락처
+                </th>
+                <td>
+                    <span class="info">&#8251;유선전화와 휴대전화중 한가지는 입력하여 주시기 바랍니다.</span><br>
+                    <span class="info">전화번호</span>
+                    <select name="local_number">
+                        <option value="02">02</option>
+                        <option value="031">031</option>
+                        <option value="032">032</option>
+                        <option value="070">070</option>
+                    </select>
+                    <span class="info">-</span>
+                    <input type="text" name="mid_local_number" maxlength="4">
+                    <span class="info">-</span>
+                    <input type="text" name="last_local_number" maxlength="4"><br>
+
+                    <span class="info">휴대전화</span>
+                    <select name="phone_number">
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="019">019</option>
+                    </select>
+                    <span class="info">-</span>
+                    <input type="text" name="mid_phone_number" maxlength="4">
+                    <span class="info">-</span>
+                    <input type="text" name="last_phone_number" maxlength="4">
+                </td>
+            </tr>
+
+            <!-- 이메일 -->
+            <tr>
+                <th><span class="important">*</span>이메일</th>
+                <td>
+                    <input type="text" name="email_forward" id="email_forward" requiimportant>
+                    @
+                    <select name="mail_add" id="mail_add" requiimportant>
+                        <option value="self">직접입력</option>
+                        <option value="gmail">gmail.com</option>
+                        <option value="naver">naver.com</option>
+                        <option value="daum">daum.net</option>
+                        <option value="paran">paran.com</option>
+                    </select>
+                    <input type="text" name="email_backward" id="email_backward">
+                </td>
+            </tr>
+
+            <!-- 주소 -->
+            <tr>
+                <th><span class="important">*</span>주소</th>
+                <td>
+                    <select name="address" id="address">
+                        <option value="">선택</option>
+                        <option value="">강남구</option>
+                        <option value="">송파구</option>
+                        <option value="">동작구</option>
+                        <option value="">강서구</option>
+                        <option value="">서초구</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 정보수신동의 -->
+            <tr>
+                <th rowspan="4"><span class="important">*</span>정보수신동의</th>
+                <td>
+                    <label for=""><b>이메일 수신</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="email_agree">예
+                    <input type="radio" name="email_agree">아니오
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>SMS 수신 </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="sms_agree">예
+                    <input type="radio" name="sms_agree">아니오
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for=""><b>카카오톡 수신</b></label>&nbsp;&nbsp;
+                    <input type="checkbox" name="kakao_agree">카카오톡 맞춤정보 사용동의
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="info">
+                        관악구에서 제공하는 행정정보(행사, 소식 등) 받아보실 수 있습니다. <br>
+                        (교육신청 및 참여예약과 관련된 내용은 수신동의 여부와 관계없이 발송됩니다.)
+                    </p>
+                    <fieldset>
+                        <strong>* 카카오톡 맞춤정보 사용동의</strong><br>
+                        <span class="info">
+                            카카오톡 맞춤정보 서비스는 참여예약 정보 및 다양한 행정정보를 SMS대신 카카오톡으로 발송해드리는 서비스입니다. <br>
+                            (본 서비스는 스마트폰에 카카오톡이 설치되어 있어야 이용이 가능합니다.)
+                        </span>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div class="button">
+            <input type="submit" id="submit" value="가입하기" class="div_button">
+            <input type="reset" value="취소" id="reset" class="div_button">
+        </div>
+    </form>
+</body>
+
+</html>

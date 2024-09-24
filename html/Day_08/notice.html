@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지창</title>
+</head>
+
+<body>
+    <h2>Frontend 시험 공지</h2>
+    <p>
+        Frontend 시험 (HTML, CSS, Javascript)이 8월 19일 오후 2시 ~ 5시 50분까지 치를 예정입니다.
+    </p>
+    <p>
+        추가적으로 시험 이외에 과제도 나갑니다. <br>
+        과제 문제는 사용자가 입력한 데이터를 Validation 하는 코드를 작성하는 문제입니다.
+    </p>
+    <div>
+        <input type="button" value="창닫기" id="close_w">
+        <input type="button" value="출력" id="print_w">
+    </div>
+
+    <script>
+        document.getElementById("close_w").addEventListener('click', function () { window.close(); });
+        document.getElementById("print_w").addEventListener('click', function () { window.print(); });
+    </script>
+</body>
+
+</html>
