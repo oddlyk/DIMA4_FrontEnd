@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cssSelector</title>
+</head>
+
+<body>
+    <h2>CSS 선택자</h2>
+    <p>
+        요소에 서식을 적용하기 위해서는 요소를 정확히 선택하는 것이 매우 중요! <br>
+        선택자(Selector)는 요소를 다양하게 선택하도록 제공하는 방법. <br>
+        여러 CSS가 겹칠 경우, 특잇값이 더 큰 것이 우선순위. <br>
+        만일 특잇값이 동일하다면 style 시트 속에서 아래에 위치할 수록 우선순위를 가짐. (덮어씌우는 형식)
+    </p>
+    <ul>
+        <li>단순 선택자
+            <ul>
+                <li>전체 선택자: * (특잇값:0)</li>
+                <li>요소 선택자: 태그명 그 자체 (특잇값:1)</li>
+                <li>그룹 선택자: ,(콤마)</li>
+                <li>클래스 선택자: class 속성을 주고, 여러 요소를 선택 (특잇값:10)</li>
+                <li>아이디 선택자: id 속성을 주고, 하나의 요소를 선택 (특잇값:100)</li>
+                <li>(예) <a href="./simpleSelector.html">단순선택자의 예</a></li>
+            </ul>
+        </li>
+        <br>
+        <hr>
+        <br>
+        <li>가상(Pseudo) 클래스 선택자 <!--수도 라고 읽음-->
+            <ul>
+                <li>(참고) <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools 가상 클래스</a></li>
+                <li>가상 클래스는 특정 요소의 상태에 따라 선택하는 방법</li>
+                <ul>
+                    <li>link, :hover(커서가 올라간 상태), :active(누른 상태), :visited(방문했던 상태), :focus(눌러서 입력커서가 들어간 상태) 등</li>
+                </ul>
+                <li>사용방법: [태그명:상태]</li>
+                <ul>
+                    <li>주로 a태그의 상태를 나누어 가상 클래스를 적용</li>
+                </ul>
+                <li>(예) <a href="./psedoSelector.html">가상 클래스 선택자의 예</a></li>
+            </ul>
+        </li>
+        <br>
+        <br>
+        <li> 가상(Pseudo) 요소 선택자
+            <ul>
+                <li>(참고) <a href="https://www.w3schools.com/css/css_pseudo_elements.asp">w3schools 가상 요소</a></li>
+                <li>가상 요소는 태그의 지정된 부분에 스타일을 적용할 때 사용</li>
+                <ul>
+                    <li>::first-letter,::before,::selection...</li>
+                </ul>
+                <li>사용방법: [태그명::요소 특징]</li>
+                <ul>
+                    <li>콜론 2개를 붙여 요소의 특정 부분에 스타일을 적용</li>
+                </ul>
+                <li>(예) <a href="./psedoElement.html">가상 요소 선택자의 예</a></li>
+                <li>(예) <a href="./tablePseudoSelector.html">응용</a></li>
+            </ul>
+        </li>
+        <br>
+        <hr>
+        <br>
+        <li>속성 선택자
+            <ul>
+                <li>(참고) <a href="https://www.w3schools.com/css/css_attribute_selectors.asp">w3schools 속성 선택자들</a></li>
+                <li>html 요소 중에서 특정 속성(attribute)을 가진 요소를 선택</li>
+                <li>
+                    사용방법 (요소없이 사용 가능) 특정 속성에...
+                    <ul>
+                        <li>[요소[속성]] : 속성을 사용했음</li>
+                        <li>[요소[속성=값]] : 속성이 특정 값과 동일</li><br>
+                        <li>[요소[속성~=값]] : 속성에 특정 단어(띄어쓰기로 구분된)가 포함</li>
+                        <li>[요소[속성|=값]] : 속성에 특정 단어(-로 구분된)가 포함 (단 - 는 단어 뒤에 와야 함)</li>
+                        <li>[요소[속성*=값]] : 속성에 특정 단어(일부가능)가 포함</li> <br>
+                        <li>[요소[속성^=값]] : 속성이 해당 단어(일부가능)로 시작</li>
+                        <li>[요소[속성$=값]] : 속성이 해당 단어(일부가능)로 끝남</li>
+                    </ul>
+                </li>
+                <li>(예) <a href="./attributeSelector.html">속성 선택자의 예</a></li>
+            </ul>
+        </li>
+        <br>
+        <hr>
+        <br>
+        <li>종속 선택자
+            <ul>
+                <li>둘 이상의 선택자를 조합해서 사용</li>
+                <li>공백(후손 선택자): 하위 항목 전부</li>
+                <li>&gt;(자식 선택자): 하위 항목 중 상위 클래스 바로 아래에 바로 붙은 항목</li>
+                <li>+(형제 선택자): 상위 클래스가 같으며 가장 첫 하위 항목</li>
+                <li>~(일반형제 선택자): 상위 클래스가 같은 모든 항목</li>
+                <li>(예) <a href="./siblingSelector.html">종속 선택자의 예</a></li>
+            </ul>
+        </li>
+        <br>
+        <hr>
+        <br>
+        <li>기타 선택자
+            <ul>
+                <li>[:not(선택자)]: 괄호 내에서 선택한 것 이외의 선택자</li>
+                <li>[:nth-child(값)]: 값에 맞는 번째 자식 요소를 선택</li>
+                <ul>
+                    <li>값으로서 숫자, 클래스명, 수식이 들어갈 수 있음</li>
+                    <li>수식의 예</li>
+                    <ul>
+                        <li>자식의 순서는 1부터 시작이지만 인덱스를 의미하는 n은 0부터 시작</li>
+                        <li>2n+1: 2의 배수+1번째인 자식, 2n: 2의 배수번째인 자식</li>
+                    </ul>
+                </ul>
+                <li>(예) <a href="./etcSelector.html">기타 선택자의 예</a></li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+</body>
+
+</html>

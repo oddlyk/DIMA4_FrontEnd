@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky</title>
+    <style>
+        h2 {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        /* 홈페이지에 강제로 세로 스크롤이 나타나게 하기 위해 공백 생성 */
+        div.container {
+            padding-bottom: 2000px;
+        }
+
+        /* Sticky 영역 생성*/
+        div.sticky {
+            /* position: sticky; 계속 고정됨 */
+            position: sticky;
+            height: 80px;
+            top: 0;
+            padding: 20px 5px 5px 5px;
+            background-color: rgba(138, 206, 235, 0.8);
+        }
+
+        /*검색창 영역*/
+        div.search {
+            width: 460px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 25px;
+            box-shadow: 5px 5px 5px 5px rgb(216, 216, 216);
+            padding: 0 20px;
+            border: 1px solid whitesmoke;
+
+            /*flex 지정*/
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        div.search input[type='text'] {
+            display: inline-block;
+            width: 400px;
+            height: 20px;
+            padding: 5px;
+            border: 0px;
+            outline: none;
+        }
+
+        div.search img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Position Sticky</h2>
+    <!-- Sticky 영역 -->
+    <div class="sticky">
+        <!-- 검색 영역 -->
+        <div class="search">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <a href="">
+                <img src="../images/search.png" alt="검색">
+            </a>
+        </div>
+    </div>
+    <!-- 본문 영역 -->
+    <div class="container">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et sequi tempore? Odit, sit non! Dolorum
+            deserunt aliquid adipisci, sed consequuntur modi excepturi eum mollitia dignissimos placeat illum natus
+            numquam.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et sequi tempore? Odit, sit non! Dolorum
+            deserunt aliquid adipisci, sed consequuntur modi excepturi eum mollitia dignissimos placeat illum natus
+            numquam.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et sequi tempore? Odit, sit non! Dolorum
+            deserunt aliquid adipisci, sed consequuntur modi excepturi eum mollitia dignissimos placeat illum natus
+            numquam.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et sequi tempore? Odit, sit non! Dolorum
+            deserunt aliquid adipisci, sed consequuntur modi excepturi eum mollitia dignissimos placeat illum natus
+            numquam.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et sequi tempore? Odit, sit non! Dolorum
+            deserunt aliquid adipisci, sed consequuntur modi excepturi eum mollitia dignissimos placeat illum natus
+            numquam.
+        </p>
+    </div>
+</body>
+
+</html>

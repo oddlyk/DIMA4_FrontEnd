@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        img {
+            /* display: block; */
+            margin: 10px;
+            /* width: 200px; */
+            border: 1px solid blueviolet;
+        }
+
+        img.second {
+            /* visibility: 화면이 보일지 말지 여부 (visible | hidden) */
+            display: none;
+        }
+
+        /* 둥근 테두리 설정 */
+        input#searching_space {
+            width: 300px;
+            height: 50px;
+            border-radius: 25px;
+            box-shadow: 5px 5px 5px lightgray;
+            border: 0px;
+            outline: none;
+            padding-left: 30px;
+            margin: 0px 30px;
+        }
+
+        div.search {
+            width: 500px;
+            height: 46px;
+            border: 1px solid black;
+            box-shadow: 0 0 10px lightgray, 0 0 20px lightgray;
+
+            /* flex display의 사용 */
+            display: flex;
+            border-radius: 25px;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.search_img {
+            width: 24px;
+            height: 44px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        div#icon {
+            margin-left: 20px;
+            margin-right: 20px;
+            background-image: url(./images/search.png);
+        }
+
+
+        div.search input[type="search"] {
+            /*input#google_search*/
+            width: 400px;
+            height: 30px;
+            border: 0px;
+            margin: auto 10px;
+            outline: none;
+        }
+
+
+        div#mic {
+            background-image: url(./images/voice_search.png);
+            margin: auto 10px;
+            /* 
+                위와 동일
+                margin-left: 10px;
+                margin-right: 10px;
+            */
+        }
+
+        div#lens {
+            background-image: url(./images/image_search.png);
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Display 속성</h2>
+    <p>
+        none, block, inline, inline-block 속성값을 이용해서 문서 내의 요소를 화면에 출력하는 방법을 제어 <br>
+        디스플레이 될 때만 위 요소의 특징을 가지는 것으로 실제 그렇게 되는 것은 아님. <br>
+    <ul>
+        <li>none: 요소가 없어짐. 화면에서도 존재하지 않았던 것으로 취급 (visibility hidden은 공간은 차지하는 것에 비해 공간 또한 제거됨)</li>
+        <li>block: 각각이 한 줄을 차지</li>
+        <li>inline: </li>
+    </ul>
+    </p>
+    <div>
+        <img src="../images/man1.png" alt="man1">
+        <img src="../images/man2.png" alt="man2" class="second">
+        <img src="../images/female1.png" alt="female1">
+        <img src="../images/female2.png" alt="female2">
+    </div> <br>
+
+    <div>
+        <input type="text" placeholder="ID">
+        <input type="search" placeholder="검색어" id="searching_space">
+        <input type="password" placeholder="비밀번호">
+    </div> <br>
+    <div>
+        <h3>구글 검색창 만들기</h3>
+        <div class="search">
+            <div id="icon" class="search_img"></div>
+            <input type="search" name="" id="google_search" placeholder="Google 검색 또는 url 입력">
+            <div id="mic" class="search_img"></div>
+            <div id="lens" class="search_img"></div>
+        </div>
+    </div>
+</body>
+
+</html>

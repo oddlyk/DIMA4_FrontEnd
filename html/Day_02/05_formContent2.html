@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼요소(추가)</title>
+</head>
+
+<body>
+    <h3>폼요소 (추가)</h3>
+    <div>
+        <a href="../../index.html"><img src="../images/home.png" alt="홈"></a>
+    </div>
+    <p>
+        input 태그의 여러 타입이 html 5에서 만들어졌음.
+    </p>
+
+    <form action="" method="post">
+        <div class="article">
+            <h3>input 태그의 기타 type들</h3>
+        </div>
+        <label> 검색:
+            <input type="search" name="searchWord">
+        </label> <br>
+
+
+        <!-- type이 url이기에 링크가 이닌 텍스트를 넣을 시, 경고 발생 -->
+        <label>회사 홈페이지: <input type="url" name="url" value="https://" placeholder="https://"></label><br>
+        <!-- value: 생성 시 함께 만들어지는 값 -->
+
+
+        <!--type이 email이기에 @가 없을 경우, 경고가 뜸-->
+        <label>이메일: <input type="email" name="email"></label><br><br>
+
+
+        <!-- type
+            - color: 색상 1개를 고를 수 있는 색상표 생성
+            - date : 년, 월, 일을 고를 수 있는 달력 객체
+            - range :  0~100 사이의 값을 바를 통해 지정
+            - number : 숫자만 입력할 수 있는 칸 생성 (가장 우측 버튼을 통해 +1, -1 가능)
+            -->
+        <label>색상: <input type="color" name="color"></label><br><br>
+        <label>날짜: <input type="date" name="date"></label><br><br>
+        <label>구간: <input type="range" name="period"></label><br><br>
+        <label>나이: <input type="number" name="age"></input></label><br><br>
+
+        <input type="submit" value="전송">
+        <input type="reset" value="취소">
+    </form>
+</body>
+
+</html>

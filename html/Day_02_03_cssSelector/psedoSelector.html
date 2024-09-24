@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a 태그의 가상 클래스 선택자의 사용</title>
+    <style>
+        a {
+            text-decoration: none;
+            /*text-decoration: 글자의 밑줄 제거*/
+        }
+
+        /*한번도 누른적 없는 상태일 때...*/
+        a:link {
+            color: darkorange;
+        }
+
+        /* 마우스 커서가 올라간 상태일 때... */
+        a:hover,
+        p.one:hover {
+            background-color: brown;
+            color: darkorange;
+            font-size: 1.2em;
+        }
+
+        p.one:hover {
+            cursor: pointer;
+            /* cursor: 올렸을 때, 커서의 모양이 달라짐
+            crosshair - + 모양 
+            grab - 손 전체모양
+            pointer - 검지손가락으로 가리키는 모양*/
+        }
+
+        /* 클릭해서 방문했던 페이지일 때... */
+        a:visited {
+            color: blue;
+        }
+
+        /* 커서로 누르고 있는 상태일 때... */
+        a:active {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>a 태그의 가상 클래스 선택자의 사용</h2>
+    <p>상태의 종류- :link, :hover(커서가 올라간 상태), :active(누른 상태), :visited(방문했던 상태)</p>
+    <div><a href="https://www.whitehouse.gov">백악관</a></div>
+    <div><a href="https://www.fbi.gov">FBI</a></div>
+    <br>
+    <p class="one">태그1</p>
+    <p class="two">태그2</p>
+</body>
+
+</html>

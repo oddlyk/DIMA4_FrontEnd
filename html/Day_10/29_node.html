@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node(DOM 내)에 접근해서 처리하기</title>
+    <script defer src="./script/A25_node.js"></script>
+</head>
+
+<body>
+    <h2>Node(DOM 내)에 접근해서 처리하기</h2>
+    beforeend: 닫는 태그 바로 앞에 데이터 추가 <br>
+    beforebegin: 시작 태그 바로 앞에 데이터 추가 <br>
+    <br>
+    aferbegin: 시작 태그 바로 뒤에 데이터 추가 <br>
+    afterend: 닫는 태그 바로 뒤에 데이터 추가<br>
+    <br>
+    - 자신의 자식으로 추가하는 방식 : aferbegin(첫 자식으로), beforeend(마지막 자식으로)
+    - 자신의 형제로 추가하는 방식 : beforebegin(형으로), afterend (동생으로)
+    </p>
+
+    <p>
+        <input type="button" value="afterend" id="afterend">
+        <input type="button" value="afterbegin" id="afterbegin">
+        <input type="button" value="beforeend" id="beforeend">
+        <input type="button" value="beforebegin" id="beforebegin">
+    </p>
+    <ul id="list">
+        <li>하나</li>
+        <li>둘</li>
+        <li>셋</li>
+    </ul>
+</body>
+
+</html>
